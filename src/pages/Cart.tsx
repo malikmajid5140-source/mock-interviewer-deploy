@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ShoppingBag, Trash2, ArrowRight, Minus, Plus, ShieldCheck } from 'lucide-react'
+import { Trash2, ArrowRight, Minus, Plus, ShieldCheck } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { motion } from 'framer-motion'
 

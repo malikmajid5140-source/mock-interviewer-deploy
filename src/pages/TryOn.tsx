@@ -1,4 +1,4 @@
-import { Sparkles, Camera, Smartphone, RefreshCw, Layers, CheckCircle2, AlertCircle, ShoppingBag } from 'lucide-react'
+import { Sparkles, Camera, Smartphone, RefreshCw, CheckCircle2, AlertCircle, ShoppingBag } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
@@ -221,4 +221,3 @@ export default function TryOn() {
     </div>
   )
 }
-import { Link } from 'react-router-dom'

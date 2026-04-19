@@ -1,4 +1,4 @@
-import { Search, SlidersHorizontal, ChevronDown, ShoppingBag, Heart, Eye, Sparkles } from 'lucide-react'
+import { Search, SlidersHorizontal, ShoppingBag, Sparkles } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { Link } from 'react-router-dom'
 import { useState, useMemo, useEffect } from 'react'
@@ -48,8 +48,6 @@ export default function Shop() {
   useEffect(() => {
     const cat = searchParams.get('cat')
     if (cat) {
-      const normalizedCat = cat.charAt(0).toUpperCase() + cat.slice(1).replace(/-/g, ' ')
-      // Handle special cases if needed
       if (cat === 'pret') setActiveCategory('Ready to Wear')
       else if (cat === 'unstitched') setActiveCategory('Unstitched')
       else if (cat === 'western') setActiveCategory('Western')

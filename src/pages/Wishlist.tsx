@@ -1,4 +1,4 @@
-import { ArrowLeft, ShoppingBag, Heart, Trash2 } from 'lucide-react'
+import { ShoppingBag, Heart, Trash2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '../components/ui/button'
 

@@ -1,4 +1,4 @@
-import { Camera, Upload, Search, Image as ImageIcon } from 'lucide-react'
+import { Camera, Upload, Search } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { motion } from 'framer-motion'
 
