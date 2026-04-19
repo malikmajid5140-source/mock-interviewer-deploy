@@ -2,7 +2,7 @@ import { Sparkles, Camera, Smartphone, RefreshCw, CheckCircle2, AlertCircle, Sho
 import { Button } from '../components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, Link } from 'react-router-dom'
 
 export default function TryOn() {
   const [searchParams] = useSearchParams()
