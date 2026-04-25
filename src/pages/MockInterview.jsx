@@ -16,7 +16,7 @@ const MockInterview = ({ navigate }) => {
           </div>
           <h3 style={{ marginBottom: '12px' }}>Video Interview</h3>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', fontSize: '14px' }}>Practice with your camera on. Get feedback on body language, eye contact, and confidence.</p>
-          <button className="btn-primary" style={{ width: '100%' }}>Start Video Session</button>
+          <button className="btn-primary" style={{ width: '100%' }} onClick={() => alert("Video Interview Mode: AI is initializing your camera... (Coming Soon in v2)")}>Start Video Session</button>
         </div>
 
         <div className="card" style={{ padding: '40px', textAlign: 'center' }}>
@@ -25,7 +25,7 @@ const MockInterview = ({ navigate }) => {
           </div>
           <h3 style={{ marginBottom: '12px' }}>Audio Interview</h3>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', fontSize: '14px' }}>Perfect for phone screenings. Focus on your tone of voice and articulation.</p>
-          <button className="btn-ghost" style={{ width: '100%' }}>Start Audio Session</button>
+          <button className="btn-ghost" style={{ width: '100%' }} onClick={() => alert("Audio Interview Mode: AI is listening... (Coming Soon in v2)")}>Start Audio Session</button>
         </div>
       </div>
 
