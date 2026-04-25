@@ -8,27 +8,37 @@ const Progress = ({ session }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (session?.user) fetchProgress()
+    fetchProgress()
   }, [session])
 
   const fetchProgress = async () => {
     try {
-      const uid = session.user.id
+      let dbSessions = []
+      let dbMcq = []
 
-      // All sessions
-      const { data: sessions } = await supabase
-        .from('sessions').select('*').eq('user_id', uid).order('created_at', { ascending: false })
+      if (session?.user) {
+        const uid = session.user.id
+        const { data: sData } = await supabase.from('sessions').select('*').eq('user_id', uid)
+        const { data: mData } = await supabase.from('mcq_attempts').select('*').eq('user_id', uid)
+        if (sData) dbSessions = sData
+        if (mData) dbMcq = mData
+      }
 
-      // MCQ attempts
-      const { data: mcq } = await supabase
-        .from('mcq_attempts').select('*').eq('user_id', uid).order('created_at', { ascending: false })
+      // Add local storage fallback
+      const localSessions = JSON.parse(localStorage.getItem('local_sessions') || '[]')
+      const localMcq = localSessions
+        .filter(s => s.session_type === 'mcq')
+        .map(s => ({ score_percentage: Math.round((s.score / s.total) * 100) }))
 
-      const totalQ = sessions?.reduce((s, x) => s + (x.questions_practiced || 0), 0) || 0
-      const avgMcq = mcq?.length ? Math.round(mcq.reduce((s, x) => s + x.score_percentage, 0) / mcq.length) : 0
-      const mockCount = sessions?.filter(s => s.session_type === 'mock_interview').length || 0
+      const allSessions = [...dbSessions, ...localSessions].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+      const allMcq = [...dbMcq, ...localMcq]
 
-      setStats({ totalQ, avgMcq, mockCount, totalSessions: sessions?.length || 0, mcqAttempts: mcq?.length || 0 })
-      setHistory(sessions || [])
+      const totalQ = allSessions.reduce((s, x) => s + (x.total || x.questions_practiced || 0), 0)
+      const avgMcq = allMcq.length ? Math.round(allMcq.reduce((s, x) => s + x.score_percentage, 0) / allMcq.length) : 0
+      const mockCount = allSessions.filter(s => s.session_type === 'mock_interview').length
+
+      setStats({ totalQ, avgMcq, mockCount, totalSessions: allSessions.length, mcqAttempts: allMcq.length })
+      setHistory(allSessions)
     } catch (err) {
       console.error(err)
     } finally {
