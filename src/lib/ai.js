@@ -52,11 +52,18 @@ export const parseJsonFromAI = (text) => {
     .replace(/```\s*/g, '')
     .trim();
 
-  // Try to extract just the JSON array or object
-  const start = cleaned.indexOf('[') !== -1 ? cleaned.indexOf('[') : cleaned.indexOf('{');
-  const end = cleaned.lastIndexOf(']') !== -1 ? cleaned.lastIndexOf(']') + 1 : cleaned.lastIndexOf('}') + 1;
-  
-  if (start === -1 || end === -1) {
+  const firstBracket = cleaned.indexOf('[');
+  const firstBrace = cleaned.indexOf('{');
+  const start = (firstBracket !== -1 && firstBrace !== -1) 
+    ? Math.min(firstBracket, firstBrace) 
+    : Math.max(firstBracket, firstBrace);
+
+  const lastBracket = cleaned.lastIndexOf(']');
+  const lastBrace = cleaned.lastIndexOf('}');
+  const end = (lastBracket !== -1 && lastBrace !== -1)
+    ? Math.max(lastBracket, lastBrace) + 1
+    : Math.max(lastBracket, lastBrace) + 1;
+  if (start === -1 || end === 0) {
     console.error("Failed to parse JSON. Raw text:", text);
     throw new Error("Could not find valid JSON in AI response");
   }
