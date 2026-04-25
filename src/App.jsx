@@ -8,6 +8,7 @@ import Profile from './pages/Profile'
 import Dashboard from './pages/Dashboard'
 import QuestionBank from './pages/QuestionBank'
 import MockInterview from './pages/MockInterview'
+import McqQuiz from './pages/McqQuiz'
 import DashboardLayout from './components/DashboardLayout'
 
 function App() {
@@ -68,7 +69,7 @@ function App() {
         case 'signin': return <SignIn navigate={navigate} />
         case 'verify': return <Verify navigate={navigate} />
         case 'profile': return <Profile navigate={navigate} />
-        default: return <Landing navigate={navigate} />
+        default: return <Landing navigate={navigate} session={session} />
       }
     }
 
@@ -79,6 +80,7 @@ function App() {
           switch (currentView) {
             case 'question-bank': return <QuestionBank navigate={navigate} />
             case 'mock-interview': return <MockInterview navigate={navigate} />
+            case 'mcq-quiz': return <McqQuiz />
             case 'dashboard':
             default: return <Dashboard navigate={navigate} session={session} />
           }

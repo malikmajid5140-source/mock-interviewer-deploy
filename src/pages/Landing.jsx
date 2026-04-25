@@ -1,7 +1,15 @@
 import React from 'react'
 import { Sparkles, CheckCircle, Globe, Play, ArrowRight, Star } from 'lucide-react'
 
-const Landing = ({ navigate }) => {
+const Landing = ({ navigate, session }) => {
+  const handleGetStarted = () => {
+    if (session) {
+      navigate('dashboard')
+    } else {
+      navigate('signup')
+    }
+  }
+
   return (
     <div className="landing-page">
       {/* Navbar */}
@@ -23,7 +31,7 @@ const Landing = ({ navigate }) => {
           <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text-secondary)', cursor: 'pointer' }}>Features</span>
           <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text-secondary)', cursor: 'pointer' }}>Pricing</span>
           <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text-secondary)', cursor: 'pointer' }} onClick={() => navigate('signin')}>Sign In</span>
-          <button className="btn-primary" onClick={() => navigate('signup')} style={{ padding: '8px 20px' }}>Get Started</button>
+          <button className="btn-primary" onClick={handleGetStarted} style={{ padding: '8px 20px' }}>Get Started</button>
         </div>
       </nav>
 
@@ -78,7 +86,7 @@ const Landing = ({ navigate }) => {
             </div>
 
             <div className="hero-ctas" style={{ display: 'flex', gap: '16px', marginBottom: '32px' }}>
-              <button className="btn-primary" onClick={() => navigate('signup')}>
+              <button className="btn-primary" onClick={handleGetStarted}>
                 Start Practicing Free <ArrowRight size={18} style={{ marginLeft: '8px' }} />
               </button>
               <button className="btn-ghost">
