@@ -33,7 +33,7 @@ export const generateInterviewContent = async (prompt) => {
 
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(`Groq API Error: ${error.error?.message || response.statusText}`);
+      throw new Error(`[GROQ] API Error: ${error.error?.message || response.statusText}`);
     }
 
     const data = await response.json();
