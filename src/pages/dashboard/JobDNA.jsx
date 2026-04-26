@@ -340,3 +340,4 @@ SCORE: X/10 — [one sentence on strength]. [One sentence on what's missing or c
 }
 
 export default JobDNA
+

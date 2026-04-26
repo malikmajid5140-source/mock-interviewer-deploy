@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { User, Bell, Shield, LogOut, Save, Loader2, CheckCircle2, Camera } from 'lucide-react'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 const Settings = ({ navigate, session }) => {
   const [activeTab, setActiveTab] = useState('profile')
@@ -223,3 +223,4 @@ const Settings = ({ navigate, session }) => {
 }
 
 export default Settings
+

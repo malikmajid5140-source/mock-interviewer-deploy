@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BarChart3, TrendingUp, Award, Target, Loader2, BookOpen, CheckSquare, MessageSquare } from 'lucide-react'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 const Progress = ({ session }) => {
   const [stats, setStats] = useState(null)
@@ -166,3 +166,4 @@ const Progress = ({ session }) => {
 }
 
 export default Progress
+

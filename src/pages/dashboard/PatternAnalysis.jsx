@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BarChart3, TrendingUp, AlertCircle, CheckCircle2, Loader2, Calendar, Target } from 'lucide-react'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 const PatternAnalysis = ({ session }) => {
   const [loading, setLoading] = useState(true)
@@ -129,3 +129,4 @@ const PatternAnalysis = ({ session }) => {
 }
 
 export default PatternAnalysis
+

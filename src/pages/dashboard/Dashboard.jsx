@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Plus, Search, BookOpen, CheckSquare, MessageSquare, ArrowRight, Loader2, Sparkles, TrendingUp, Target, Zap, Clock, Calendar, Award, FileText, BarChart } from 'lucide-react'
-import { supabase } from '../lib/supabase'
-import logo from './logo.png'
-import FloatingBackground from '../components/FloatingBackground'
+import { supabase } from '../../lib/supabase'
+import logo from '../../assets/logo.png'
+import FloatingBackground from '../../components/FloatingBackground'
 
 const Dashboard = ({ navigate, session }) => {
   const [stats, setStats] = useState({
@@ -278,3 +278,4 @@ const Dashboard = ({ navigate, session }) => {
 }
 
 export default Dashboard
+

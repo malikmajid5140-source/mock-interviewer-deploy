@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Search, Filter, Bookmark, ChevronRight, MessageSquare, Sparkles, Loader2 } from 'lucide-react'
 import { generateQuestions } from '../lib/ai'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 const QuestionBank = () => {
   const [role, setRole] = useState('')
@@ -191,3 +191,4 @@ const QuestionBank = () => {
 }
 
 export default QuestionBank
+

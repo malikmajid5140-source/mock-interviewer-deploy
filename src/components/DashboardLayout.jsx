@@ -1,5 +1,5 @@
 import { LayoutDashboard, BookOpen, CheckSquare, MessageSquare, Calendar, BarChart3, Settings, LogOut, Target, Users, DollarSign, Activity, User, Bell, Zap, FileText } from 'lucide-react'
-import logo from '../pages/logo.png'
+import logo from '../assets/logo.png'
 import { supabase } from '../lib/supabase'
 
 const DashboardLayout = ({ children, navigate, activeView, session }) => {

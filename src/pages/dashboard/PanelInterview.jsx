@@ -348,3 +348,4 @@ const PanelInterview = ({ navigate }) => {
 }
 
 export default PanelInterview
+

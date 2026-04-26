@@ -1,5 +1,5 @@
 import { CheckCircle, Eye, EyeOff } from 'lucide-react'
-import FloatingBackground from '../components/FloatingBackground'
+import FloatingBackground from '../../components/FloatingBackground'
 
 const SignIn = ({ navigate }) => {
   const [formData, setFormData] = useState({
@@ -172,3 +172,4 @@ const SignIn = ({ navigate }) => {
 }
 
 export default SignIn
+

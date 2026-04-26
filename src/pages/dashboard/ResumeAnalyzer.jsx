@@ -139,3 +139,4 @@ const ResumeAnalyzer = ({ navigate }) => {
 }
 
 export default ResumeAnalyzer
+

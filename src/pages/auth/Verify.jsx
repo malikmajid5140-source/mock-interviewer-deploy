@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 const Verify = ({ navigate }) => {
   const [otp, setOtp] = useState(['', '', '', '', '', ''])
@@ -151,3 +151,4 @@ const Verify = ({ navigate }) => {
 }
 
 export default Verify
+

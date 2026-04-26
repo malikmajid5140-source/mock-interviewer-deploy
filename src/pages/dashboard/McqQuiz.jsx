@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Sparkles, CheckCircle2, XCircle, ArrowRight, RefreshCw, Loader2, Award } from 'lucide-react'
 import { generateMCQs } from '../lib/ai'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../../lib/supabase'
 
 const McqQuiz = () => {
   const [screen, setScreen] = useState('setup') // setup | loading | quiz | results
@@ -229,3 +229,4 @@ const McqQuiz = () => {
 }
 
 export default McqQuiz
+
