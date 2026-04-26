@@ -305,6 +305,7 @@ const Landing = ({ navigate, session }) => {
               <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'var(--surface-alt)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>in</div>
             </div>
           </div>
+        </div>
         <div style={{ maxWidth: '1200px', margin: '64px auto 0', paddingTop: '32px', borderTop: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '13px', color: 'var(--text-muted)' }}>
           <span>© 2026 Interview Forge. All rights reserved.</span>
           <span style={{ fontWeight: 600, color: 'var(--navy)' }}>Designed By Malik Majid</span>
